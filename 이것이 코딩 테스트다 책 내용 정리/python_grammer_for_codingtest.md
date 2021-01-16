@@ -220,7 +220,7 @@
 
 ## 주요 라이브러리의 문법과 유의점
 
-#### 표준 라이브러리 
+### 표준 라이브러리 
 
 * 특정한 프로그래밍 언어에서 자주 사용되는 표준 소스코드를 미리 구현해 놓은 라이브러리
 
@@ -228,89 +228,96 @@
 
   [파이썬 표준 라이브러리 공식 문서](https://docs.python.org/ko/3/library/index.html)
 
-#### 코딩 테스트를 위해 반드시 알아야 하는 라이브러리
+### 코딩 테스트를 위해 반드시 알아야 하는 라이브러리
 
-* 내장 함수: print(), input() 과 같은 기본 입출력 기능부터 sorted()와 같은 정렬 기능을 포함하고 있는 기본 내장 라이브러리
+#### 내장 함수 
 
-  * print(), input(), sum(), min(), max(), eval(), sorted()
+print(), input() 과 같은 기본 입출력 기능부터 sorted()와 같은 정렬 기능을 포함하고 있는 기본 내장 라이브러리
 
-* itertools : 파이썬에서 반복되는 형태의 데이터를 처리하는 기능을 제공하는 라이브러리. 순열과 조합 라이브러리를 제공한다.
+* print(), input(), sum(), min(), max(), eval(), sorted()
 
-  * permutations() : 리스트와 같은 iterable 객체에서 r 개의 데이터를 뽑아 일렬로 나열하는 모든 경우(순열)을 계산해준다.
+#### itertools 
 
-    ```python
-    from itertools import permutations
-    
-    data = ['A', 'B', 'C'] # 데이터 준비
-    
-    result = list(permutations(data,3)) # 모든 순열 구하기
-    ```
+파이썬에서 반복되는 형태의 데이터를 처리하는 기능을 제공하는 라이브러리. 순열과 조합 라이브러리를 제공한다.
 
-  * combinations() : 순서를 고려하지 않고 나열하는 모든 경우(조합)
+* permutations() : 리스트와 같은 iterable 객체에서 r 개의 데이터를 뽑아 일렬로 나열하는 모든 경우(순열)을 계산해준다.
 
-    ```python
-    from itertools import combinations
-    
-    data = ['A', 'B', 'C']
-    result = list(combinations(data, 2))
-    
-    print(result)
-    ```
+  ```python
+  from itertools import permutations
+  
+  data = ['A', 'B', 'C'] # 데이터 준비
+  
+  result = list(permutations(data,3)) # 모든 순열 구하기
+  ```
 
-  * product() : permutations()와 같지만 원소를 중복하여 뽑는다
+* combinations() : 순서를 고려하지 않고 나열하는 모든 경우(조합)
 
-    
+  ```python
+  from itertools import combinations
+  
+  data = ['A', 'B', 'C']
+  result = list(combinations(data, 2))
+  
+  print(result)
+  ```
 
-* heapq: 힙(Heap) 기능을 제공하는 라이브러리. 우선순위 큐 기능을 구현하기 위해 사용
+* product() : permutations()와 같지만 원소를 중복하여 뽑는다
 
-  * 파이썬의 힙은 최소 힙 으로 구성되어 있기 때문에 단순히 원소를 힙에 전부 넣었다가 빼는 것만으로도 시간 복잡도 O(NlogN)에 오름차순 정렬이 완료된다
 
-  * heapq.heappush() : 힙에 원소를 삽입
+#### heapq
 
-  * heapq.heqppop() : 힙에서 원소를 꺼냄
+ 힙(Heap) 기능을 제공하는 라이브러리. 우선순위 큐 기능을 구현하기 위해 사용
 
-  * 파이썬에서는 최대 힙을 제공하지 않는다. 따라서 heqpq 라이브러리를 이용하여 최대 힙을 구현해야 할 때는 원소의 부호를 임시로 변경하는 방식을 사용. 힙에 원소를 삽입하기 전에 잠시 부호를 반대로 바꾸었다가, 힙에서 원소를 꺼낸 뒤에 다시 원소의 부호를 바꾸면 된다.
+* 파이썬의 힙은 최소 힙 으로 구성되어 있기 때문에 단순히 원소를 힙에 전부 넣었다가 빼는 것만으로도 시간 복잡도 O(NlogN)에 오름차순 정렬이 완료된다
 
-    ```python
-    import heapq
-    
-    def heapsort(iterable):
-        h = []
-        result = []
-        # 모든 원소를 차례대로 힙에 삽입
-        for value in iterable:
-            heapq.heappush(h, -value)
-        # 힙에 삽입된 모든 원소를 차례대로 꺼내어 담기
-        for i in range(len(h))
-        	result.append(-heapq.heappop(h))
-        return result
-    ```
+* heapq.heappush() : 힙에 원소를 삽입
 
-    
+* heapq.heqppop() : 힙에서 원소를 꺼냄
 
-* bisect: 이진 탐색(Binary Search) 기능을 제공하는 라이브러리
+* 파이썬에서는 최대 힙을 제공하지 않는다. 따라서 heqpq 라이브러리를 이용하여 최대 힙을 구현해야 할 때는 원소의 부호를 임시로 변경하는 방식을 사용. 힙에 원소를 삽입하기 전에 잠시 부호를 반대로 바꾸었다가, 힙에서 원소를 꺼낸 뒤에 다시 원소의 부호를 바꾸면 된다.
 
-  * 파이썬에서는 이진 탐색을 쉽게 구현할 수 있도록 bisect 라이브러리 제공
-  * '정렬된 배열'에서 특정한 원소를 찾아야 할 때 매우 효과적으로 사용된다.
-  * bisect_left(a, x) : 정렬된 순서를 유지하면서 리스트 a에 데이터 x를 삽입할 가장 왼쪽 인덱스를 찾는 메서드
-  * bisect_right(a, x) : 정렬된 순서를 유지하도록 리스트 a에 데이터 x를 삽입할 가장 오른쪽 인덱스를 찾는 메서드
+  ```python
+  import heapq
+  
+  def heapsort(iterable):
+      h = []
+      result = []
+      # 모든 원소를 차례대로 힙에 삽입
+      for value in iterable:
+          heapq.heappush(h, -value)
+      # 힙에 삽입된 모든 원소를 차례대로 꺼내어 담기
+      for i in range(len(h))
+      	result.append(-heapq.heappop(h))
+      return result
+  ```
 
-* collections: 덱(deque), 카운터(counter) 등의 유용한 자료구조를 포함하고 있는 라이브러리
+#### bisect
 
-  * 덱(deque)
-    * 파이썬에서는 덱(deque)를 사용해 큐를 구현한다
-    * 인덱싱, 슬라이싱 사용 불가 
-    * 연속적으로 나열된 데이터의 시작 부분이나 끝부분에 데이터를 삽입하거나 삭제할 때 매우 효과적으로 사용
-    * 스택이나 큐의 기능을 모두 포함
-    * popleft() : 첫번째 원소 제거
-    * pop() : 마지막 원소 제거
-    * appendleft(x) : 첫 번째 인덱스에 원소 x를 삽입
-    * append(x) : 마지막 인덱스에 원소를 삽입
-  * Counter 
-    * 등장 횟수를 세는 기능
+ 이진 탐색(Binary Search) 기능을 제공하는 라이브러리
 
-*  math
+* 파이썬에서는 이진 탐색을 쉽게 구현할 수 있도록 bisect 라이브러리 제공
+* '정렬된 배열'에서 특정한 원소를 찾아야 할 때 매우 효과적으로 사용된다.
+* bisect_left(a, x) : 정렬된 순서를 유지하면서 리스트 a에 데이터 x를 삽입할 가장 왼쪽 인덱스를 찾는 메서드
+* bisect_right(a, x) : 정렬된 순서를 유지하도록 리스트 a에 데이터 x를 삽입할 가장 오른쪽 인덱스를 찾는 메서드
 
-  * factorial(x)
-  * sqrt(x)
-  * gcd(a, b) 최대공약수
+#### collections
+
+덱(deque), 카운터(counter) 등의 유용한 자료구조를 포함하고 있는 라이브러리
+
+* 덱(deque)
+  * 파이썬에서는 덱(deque)를 사용해 큐를 구현한다
+  * 인덱싱, 슬라이싱 사용 불가 
+  * 연속적으로 나열된 데이터의 시작 부분이나 끝부분에 데이터를 삽입하거나 삭제할 때 매우 효과적으로 사용
+  * 스택이나 큐의 기능을 모두 포함
+  * popleft() : 첫번째 원소 제거
+  * pop() : 마지막 원소 제거
+  * appendleft(x) : 첫 번째 인덱스에 원소 x를 삽입
+  * append(x) : 마지막 인덱스에 원소를 삽입
+* Counter 
+  * 등장 횟수를 세는 기능
+
+#### math
+
+* factorial(x)
+* sqrt(x)
+* gcd(a, b) 최대공약수
