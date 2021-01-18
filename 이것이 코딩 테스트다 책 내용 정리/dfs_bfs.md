@@ -120,7 +120,7 @@ def bfs(graph, start, visited):
         for i in graph[v]:
             if not visited[i]:
                 queue.append(i)
-                visited[i] = True;
+                visited[i] = True
                     
     
     
