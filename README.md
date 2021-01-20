@@ -6,15 +6,16 @@
 
 * git 기초 내용
 
-  
 
-### 멀캠 IoT
 
-* Python
 
-* MariaDB
+### PyStudy
 
-  
+
+
+### MariaDB
+
+
 
 ### 이것이 코딩 테스트다 책 정리
 
