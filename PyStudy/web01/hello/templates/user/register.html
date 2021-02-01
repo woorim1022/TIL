@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Register</h1>
+    <form action="registerapp" method="get">
+        <fieldset>
+            <legend>Register Page</legend>
+
+
+
+
+
+            <input type="color" name="favcolor"><br>
+            <input type="date" name="regdate"><br>
+            <input type="datetime" name="bdaytime"><br>
+            <input type="datetime-local" name="bdaytime"><br>
+            <input type="email" name="email"><br>
+            <input type="month" name="bdaymonth"><br>
+            <input type="number" name="quantity" min="1" max="5"><br>
+            <input type="range" name="points" min="0" max="10"><br>
+            <input type="search" name="googlesearch"><br>
+
+
+
+
+
+
+
+            <label for="id">id</label>
+            <input type="text" name="rid" id="id"><br>
+            <label for="pwd">PWD</label>
+            <input type="password" name="rpwd" id="pwd"><br>
+            <label for="age">AGE</label>
+            <input type="number" name="rage" id="age"><br>
+            <p>직업</p>
+<!--            r1 중에 내가 선택한 값이 무엇인지 value 속성을 통해 알 수 있음
+                r1=cr1 과 같이 서버로 전송됨-->
+            <label for="job1">선생</label>
+            <input type="radio" name="r1" value="cr1" id="job1">
+            <label for="job2">교장</label>
+            <input type="radio" name="r1" value="cr2" id="job2">
+            <label for="job3">학생</label>
+            <input type="radio" name="r1" value="cr3" id="job3">
+            <p>취미</p>
+            <label for="job1">공부</label>
+            <input type="checkbox" name="r2" value="ch1" id="h1">
+            <label for="job2">운동</label>
+            <input type="checkbox" name="r2" value="ch2" id="h2">
+            <label for="job3">독서</label>
+            <input type="checkbox" name="r2" value="ch3" id="h3">
+
+            <p>자기소개</p>
+            <textarea rows="10" cols="50" name="tt"></textarea>
+
+            <p>전화번호</p>
+            <select name="p">
+                <option value="skt">SKT</option>
+                <option value="kt">KT</option>
+                <option value="lg">LG</option>
+            </select>
+        </fieldset>
+<!--        숨겨지는 input 태그
+            서버에는 hidden의 값도 같이 전송됨-->
+        <input type="hidden" name="loginid" value="user01">
+        <input type="submit" value="REGISTER">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>

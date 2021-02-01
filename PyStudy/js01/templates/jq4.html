@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <style>
+        div{
+            width:400px;
+            border:3px solid red;
+        }
+        .mycss {
+            color:yellow;
+            background:black;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('button:eq(0)').click(function(){
+                $('div').append('<h2>Append</h2>');
+            });
+            $('button:eq(1)').click(function(){
+                $('div').prepend('<h2>prepend</h2>');
+            });
+            $('button:eq(2)').click(function(){
+                $('div').after('<h2>after</h2>');
+            });
+            $('button:eq(3)').click(function(){
+                $('div').before('<h2>before</h2>');
+            });
+            // 태크를 아예 지워버림
+            $('button:eq(4)').click(function(){
+                $('div').remove();
+            });
+            // 안의 내용만 지움
+            $('button:eq(5)').click(function(){
+                $('div').empty();
+            });
+            //css를 적용한다
+            $('button:eq(6)').click(function(){
+                $('h1').addClass('mycss');
+            });
+            //css를 제거한다
+            $('button:eq(7)').click(function(){
+                $('h1').removeClass('mycss');
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>Append</button>
+    <button>Prepend</button>
+    <button>After</button>
+    <button>Before</button>
+    <button>Remove</button>
+    <button>Empty</button>
+    <button>CSS ON</button>
+    <button>CSS OFF</button>
+    <h1>Header1</h1>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Resume</h2>
+
+
+<form action="{% url 'myresume' %}" method="get">
+<table>
+  <tr>
+    <th>성</th>
+    <th>이름</th>
+    <th>성별</th>
+    <th>자기소개</th>
+  </tr>
+  <tr>
+    <td><label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="김"><br></td>
+
+
+    <td> <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="우림"><br><br></td>
+
+    <td> <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female" checked="checked">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label></td>
+
+    <td>
+      <p>자기소개</p>
+      <textarea rows="10" cols="50" name="text" value="">안녕하세요 안녕안녕</textarea></td>
+    <br>
+
+  </tr>
+  <tr>
+    <td colspan="3"> <input type="submit" value="Submit"></td>
+  </tr>
+</table>
+
+</form>
+
+
+
+
+
+</body>
+</html>

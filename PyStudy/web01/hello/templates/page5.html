@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Form Test</h1>
+    <form action="registerapp" method="get">
+<!--        http전송방식 : get, post-->
+<!--        form은 block, 안의 내용물은 inline tag-->
+<!--        버튼을 클릭하면 id=id01&name=name01&age=20 와 같이 쿼리 스트링으로 서버로 넘어가서 디비에 저장-->
+        <table>
+            <tr><td>ID<input type="text" name="id"></td></tr>
+            <tr><td>NAME<input type="text" name="name"></td></tr>
+            <tr><td>AGE<input type="number" name="age"></td></tr>
+            <tr><td><input type="submit" value="REGISTER"></td></tr>
+        </table>
+
+    </form>
+</body>
+</html>

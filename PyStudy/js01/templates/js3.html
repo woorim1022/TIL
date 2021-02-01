@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+    function a(d1){
+        var result = d1 * 1000;
+        alert('a...'+result);
+
+    };
+    function c(d1){
+        var result = d1 * 1000;
+        return result;
+    };
+    var b = function(d2){
+        alert('b...'+d2);
+    };
+    //a(100);
+    //b('abc');
+    //rs = c(200);
+    //alert(rs);
+    var f1 = function(){
+        return 10;
+    };
+    function f2(f){
+        result = 100 * f();
+        return result;
+    };
+    rs = f2(f1);
+    alert(rs);
+
+    var f3 = function(){
+        return function(){
+            return 10;
+        };
+    };
+
+    rsf = f3();
+    alert(rsf());
+
+    str1 = 'alert("abc");';
+    eval(str1);
+
+    // JSON 이 아닌 단순 스트링 형태
+    //str2 = '{"id":"id01","age":30. "score":[90,80,90,100]}';
+    // eval()함수를 통해 JSON 형식으로 바꾸어줌
+    //obj1 = eval(str2);
+    //alert(obj1.id);
+    </script>
+</head>
+<body>
+    <h1>Header1</h1>
+    <h2>Header2</h2>
+    <h3 onclick="clickh3();">Header3</h3>
+</body>
+</html>

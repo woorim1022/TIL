@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <style>
+        div {
+            width: 300px;
+            border: 2px solid red;
+        }
+
+    </style>
+    <script>
+
+
+        function display(data){
+            users = data.datas;
+            result = '';
+            // 배열에서 데이터를 끄집어 내서 함수가 배열안의 내용의 횟수만큼 반복되게끔 하는 함수 each()
+            $(users).each(function(index,item){
+                // 이곳에서 끄집어낸 데이터들을 예쁘게 정리해주자
+                result += '<h1>';
+                result += item.id+' '+item.name+' '+item.age;
+                result += '</h1>';
+            });
+            $('div').html(result);
+        };
+
+        function getData(){
+            // 서버에서 가져올 데이터
+            // 배열 안에 object가 들어가 있는 형태
+            $.ajax({
+                url:'getuser',
+                success:function(data){
+                    display(data);
+                },
+                error:function(){}
+            });
+        };
+
+        // 문서가 준비되면 동작을 하겠습니다
+        $(document).ready(function(){
+            setInterval(getData,3000);
+            // 버튼이 클릭되면 동작을 하겠습니다
+            $('button').click(function(){
+                getData();
+            });
+        });
+
+
+
+    </script>
+</head>
+<body>
+    <h1>AJAX Main Page</h1>
+    <button>GET DATA</button>
+    <div></div>
+</body>
+</html>

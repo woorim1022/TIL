@@ -1,0 +1,12 @@
+{% load static  %}
+
+<section>
+      <h1>Item Add</h1>
+      <form action="{% url 'useraddimpl' %}" method="post">
+            {% csrf_token %}
+            NAME<input type="text" name="name"><br>
+            PWD<input type="text" name="pwd"><br>
+            PRICE<input type="text" name="pwd"><br>
+            <input type="submit" value="REGISTER">
+      </form>
+</section>

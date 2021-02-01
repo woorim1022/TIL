@@ -1,0 +1,11 @@
+{% load static  %}
+
+<section>
+      <h1>Item List</h1>
+      {% for i in itemlist %}
+            <h3>
+                  <img src="static/{{i.imgname}}" alt="">
+                  {{i.name}},{{i.price}},{{i.regdate}}
+            </h3>
+      {% endfor %}
+</section>

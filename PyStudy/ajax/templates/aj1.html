@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <style>
+        #container{
+            width:500px;
+            height:400px;
+            border:1px solid red;
+        }
+    </style>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+    <script>
+        function graph(data){
+            // 서버에서 가져온 데이터
+            graphdata = data.datas;
+
+            // 그래프 만들어 주는 부분
+            Highcharts.chart('container', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'World\'s largest cities per 2017'
+                },
+                subtitle: {
+                    text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                },
+                xAxis: {
+                    type: 'category',
+                    labels: {
+                        rotation: -45,
+                        style: {
+                            fontSize: '13px',
+                            fontFamily: 'Verdana, sans-serif'
+                        }
+                    }
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Population (millions)'
+                    }
+                },
+                legend: {
+                    enabled: false
+                },
+                tooltip: {
+                    pointFormat: 'Population in 2017: <b>{point.y:.1f} millions</b>'
+                },
+                series: [{
+                    'name': 'Population',
+                    // 서버에서 가져온 데이터를 여기에 넣어줌
+                    'data': graphdata,
+                    'dataLabels': {
+                        'enabled': true,
+                        'rotation': -90,
+                        'color': '#FFFFFF',
+                        'align': 'right',
+                        'format': '{point.y:.1f}',
+                        'style': {
+                            'fontSize': '13px',
+                            'fontFamily': 'Verdana, sans-serif'
+                        }
+                    }
+                }]
+            });
+
+
+
+        };
+
+
+        // 서버로부터 그래프에 넣어줄 데이터를 가져오는 부분
+        function getData(){
+            $.ajax({
+                url:{% url 'graph' %},
+                success:function(data){
+                    // 가져온 데이터를 그래프에 넣어줌
+                    graph(data);
+                }
+            });
+        };
+
+
+        $(document).ready(function(){
+            $('button').click(function(){
+                getData();
+            });
+            // 얘를 클릭했을 때
+            $('input[name="id"]').keyup(function(){
+                // 얘의 값을 가져온다
+                id = $(this).val();
+                // id에 저장한 값을 get 방식으로 날린다
+                $.ajax({
+                   url:{% url "getid" %},
+                   data:{'id':id},
+                   type:'get',
+                   success:function(data){
+                        alert(data);
+                        if(data.trim() == '1'){
+                            $('span').text('ok');
+                        }else{
+                            $('span').text('no');
+                        };
+                   }
+                });
+
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+    <form action="#" method="#">
+        ID<input type="text" name="id"><span></span>
+<!--        PWD<input type="password" name="pwd">-->
+<!--        NAME<input type="text" name="name"><span></span>-->
+        <button>Graph1</button>
+        <div id="container"></div>
+    </form>
+</body>
+</html>
+
+
+
+
