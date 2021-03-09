@@ -20,19 +20,25 @@ void setup() {
 }
 
 void loop() {
-  int inputVal = analogRead(A0);
-  int convertVal = map(inputVal,0,1023,0,255);
-  Serial.println(convertVal);
+  //push 버튼의 상태 저장
   btn_state = digitalRead(push_btn);
+  //A0로 시작하는 아날로그 핀에서 가변저항 값을 읽어옴
+  int inputVal = analogRead(A0);
+  // RGB LED에 셋팅할 값으로 변환
+  int convertVal = map(inputVal,0,1023,0,255);
+  Serial.println("현재 가변저항의 바뀐 값 " + (String)convertVal);
   if(btn_state==1){  
     if(flag==0){
       analogWrite(red,convertVal);
+      Serial.println("RED : " + (String)convertVal);
       flag = 1;
     }else if(flag==1){
       analogWrite(blue,convertVal);
+      Serial.println("BLUE : " + (String)convertVal);
       flag = 2;
     }else{
       analogWrite(green,convertVal);
+      Serial.println("GREEN : " + (String)convertVal);
       flag = 0;
     }
   }
