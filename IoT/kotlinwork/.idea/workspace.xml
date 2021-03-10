@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7388364c-d433-44cc-92d7-e7db03bc02f8" name="Default Changelist" comment="" />
+    <list default="true" id="f055a2c5-fed9-4d3d-9132-966cab6c2910" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +14,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectId" id="1pV4RtxZDdu26N21EgYEBV9FmP6" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1pXhj9fTxQamv4wA5pq0tZNUlnP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -22,37 +26,15 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Kotlin.Kotlin_exam02Kt">
-    <configuration name="ArrayTest01Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <module name="basic" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="ArrayTest01Kt" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ForTestKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <module name="basic" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="ForTestKt" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="Kotlin_exam01Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <module name="basic" />
+      <module name="oop" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -64,39 +46,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Kotlin_exam02Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <module name="basic" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="Kotlin_exam02Kt" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ScannerTestKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <module name="basic" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="ScannerTestKt" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.Kotlin_exam02Kt" />
         <item itemvalue="Kotlin.Kotlin_exam01Kt" />
-        <item itemvalue="Kotlin.ScannerTestKt" />
-        <item itemvalue="Kotlin.ArrayTest01Kt" />
-        <item itemvalue="Kotlin.ForTestKt" />
       </list>
     </recent_temporary>
   </component>
@@ -105,50 +57,42 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7388364c-d433-44cc-92d7-e7db03bc02f8" name="Default Changelist" comment="" />
-      <created>1615254918463</created>
+      <changelist id="f055a2c5-fed9-4d3d-9132-966cab6c2910" name="Default Changelist" comment="" />
+      <created>1615335474651</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1615254918463</updated>
+      <updated>1615335474651</updated>
     </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2240" y="695" key="FileChooserDialogImpl" timestamp="1615267913100">
+    <state x="2052" y="598" key="#Project_Structure" timestamp="1615335610844">
       <screen x="1920" y="0" width="1080" height="1880" />
     </state>
-    <state x="2240" y="695" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1080.1880@1920.0.1080.1880" timestamp="1615267913100" />
-    <state width="1037" height="586" key="GridCell.Tab.0.bottom" timestamp="1615281602149">
+    <state x="2052" y="598" key="#Project_Structure/0.0.1536.824/1920.0.1080.1880@1920.0.1080.1880" timestamp="1615335610844" />
+    <state x="2292" y="681" key="FileChooserDialogImpl" timestamp="1615335746419">
       <screen x="1920" y="0" width="1080" height="1880" />
     </state>
-    <state width="1037" height="586" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1080.1880@1920.0.1080.1880" timestamp="1615281602149" />
-    <state width="1037" height="586" key="GridCell.Tab.0.center" timestamp="1615281602149">
+    <state x="2292" y="681" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1080.1880@1920.0.1080.1880" timestamp="1615335746419" />
+    <state width="1037" height="388" key="GridCell.Tab.0.bottom" timestamp="1615340470500">
       <screen x="1920" y="0" width="1080" height="1880" />
     </state>
-    <state width="1037" height="586" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1080.1880@1920.0.1080.1880" timestamp="1615281602149" />
-    <state width="1037" height="586" key="GridCell.Tab.0.left" timestamp="1615281602149">
+    <state width="1037" height="388" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1080.1880@1920.0.1080.1880" timestamp="1615340470500" />
+    <state width="1037" height="388" key="GridCell.Tab.0.center" timestamp="1615340470500">
       <screen x="1920" y="0" width="1080" height="1880" />
     </state>
-    <state width="1037" height="586" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1080.1880@1920.0.1080.1880" timestamp="1615281602149" />
-    <state width="1037" height="586" key="GridCell.Tab.0.right" timestamp="1615281602149">
+    <state width="1037" height="388" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1080.1880@1920.0.1080.1880" timestamp="1615340470500" />
+    <state width="1037" height="388" key="GridCell.Tab.0.left" timestamp="1615340470500">
       <screen x="1920" y="0" width="1080" height="1880" />
     </state>
-    <state width="1037" height="586" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1080.1880@1920.0.1080.1880" timestamp="1615281602149" />
-    <state x="1961" y="582" key="SettingsEditor" timestamp="1615280160465">
+    <state width="1037" height="388" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1080.1880@1920.0.1080.1880" timestamp="1615340470500" />
+    <state width="1037" height="388" key="GridCell.Tab.0.right" timestamp="1615340470500">
       <screen x="1920" y="0" width="1080" height="1880" />
     </state>
-    <state x="1961" y="582" key="SettingsEditor/0.0.1536.824/1920.0.1080.1880@1920.0.1080.1880" timestamp="1615280160465" />
-    <state x="2152" y="764" key="com.intellij.ide.util.TipDialog" timestamp="1615281475066">
+    <state width="1037" height="388" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1080.1880@1920.0.1080.1880" timestamp="1615340470500" />
+    <state x="2103" y="550" key="new project wizard" timestamp="1615335746999">
       <screen x="1920" y="0" width="1080" height="1880" />
     </state>
-    <state x="2152" y="764" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1080.1880@1920.0.1080.1880" timestamp="1615281475066" />
-    <state x="2012" y="92" width="896" height="1696" maximized="true" key="dock-window-1" timestamp="1615278802555">
-      <screen x="1920" y="0" width="1080" height="1880" />
-    </state>
-    <state x="2012" y="92" width="896" height="1696" maximized="true" key="dock-window-1/0.0.1536.824/1920.0.1080.1880@1920.0.1080.1880" timestamp="1615278802555" />
-    <state x="2123" y="435" width="672" height="678" key="search.everywhere.popup" timestamp="1615256763148">
-      <screen x="1920" y="0" width="1080" height="1880" />
-    </state>
-    <state x="2123" y="435" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.0.1080.1880@1920.0.1080.1880" timestamp="1615256763148" />
+    <state x="2103" y="550" key="new project wizard/0.0.1536.824/1920.0.1080.1880@1920.0.1080.1880" timestamp="1615335746999" />
   </component>
 </project>

@@ -57,10 +57,10 @@ fun main(){
     println("********************************************")
 }
 
-fun display(c:Char):String = when(c.toInt()){
-    in 48..57 -> "숫자입니다"
-    in 65..90 -> "문자입니다"
-    in 97..122 -> "문자입니다"
+fun display(c:Char):String = when(c){
+    in '0'..'9' -> "숫자입니다"
+    in 'a'..'z' -> "문자입니다"
+    in 'A'..'Z' -> "문자입니다"
     else -> "판단할 수 없습니다"
 }
 
