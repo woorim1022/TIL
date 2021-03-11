@@ -11,7 +11,7 @@ fun main(){
     println("Customer4=> age:${obj5.age},name:${obj5.name},telnum:${obj5.telNum}")
 }
 
-// 생성자 정의하기 - 1
+//============================생성자 정의하기 - 1 =============================
 class Customer{
     var age:Int = 0
     var telNum = 0
@@ -34,15 +34,17 @@ class Customer{
     }
 }
 
-// 생성자 정의하기 - 2
+//============================생성자 정의하기 - 2 ===================================
 // 객체를 생성할 때 어떤 멤버변수를 초기화 해줄지 지정
+// 주 생성자에서 변수를 정의할 때는 var를 적어줘야 한다
 class Customer2 constructor(var age:Int,var telNum:Int){
 }
 // 클래스를 선언하며 생성자를 바로 정의하는 경우 constructor의 생략이 가능
 class Customer3 (var age:Int,var telNum:Int){
 }
 
-// 생성자 정의하기 - 3
+
+//============================생성자 정의하기 - 3 =====================================
 // 2번방법의 확장
 // 주생성자(기본생성자)는 반드시 초기화해야 하는 변수를 정의
 // age, name 은 반드시 초기화되어야 하지만 telNum은 안되어도 됨
