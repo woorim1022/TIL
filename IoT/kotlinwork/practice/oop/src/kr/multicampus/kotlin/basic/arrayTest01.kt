@@ -1,3 +1,5 @@
+package kr.multicampus.kotlin.basic
+
 fun main(){
     /*
     * 배열
@@ -23,5 +25,5 @@ fun main(){
 
 //배열이 매개변수인 함수
 fun display(myarr:Array<Int>){ //for 사용 가능
-    println("display 함수 => myarr1:${myarr.contentToString()}")
+    println("kr.multicampus.kotlin.basic.display 함수 => myarr1:${myarr.contentToString()}")
 }

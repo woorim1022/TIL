@@ -1,3 +1,5 @@
+package kr.multicampus.kotlin.basic
+
 fun main(){
     /*
     * 연산자

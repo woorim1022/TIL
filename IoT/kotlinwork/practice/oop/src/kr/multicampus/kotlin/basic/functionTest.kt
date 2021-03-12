@@ -1,3 +1,5 @@
+package kr.multicampus.kotlin.basic
+
 fun main() {
     /*
     * 1) 코틀린에서 함수를 정의한 자바로 변환될 때 클래스의 메소드로 변환

@@ -1,4 +1,4 @@
-/*
+package kr.multicampus.kotlin.basic/*
 *  계산기
 * 1. 더하기
 * 2. 빼기

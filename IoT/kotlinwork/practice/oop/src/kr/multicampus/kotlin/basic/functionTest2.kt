@@ -1,3 +1,5 @@
+package kr.multicampus.kotlin.basic
+
 fun main(){
     /*
     * 1. 함수의 오버로딩 (overloading)
@@ -25,18 +27,18 @@ fun outerFunc(){
 }
 
 fun display(){
-    println("display - 매개변수 없는 함수")
+    println("kr.multicampus.kotlin.basic.display - 매개변수 없는 함수")
     println("***************************")
 }
 fun display(num1:Int){
-    println("display - int 매개변수 1개 함수")
+    println("kr.multicampus.kotlin.basic.display - int 매개변수 1개 함수")
     println("***************************")
 }
 fun display(num1:Int, num2:Int){
-    println("display - int 매개변수 2개 함수")
+    println("kr.multicampus.kotlin.basic.display - int 매개변수 2개 함수")
     println("***************************")
 }
 fun display(num1:Double){
-    println("display - double 매개변수 1개 함수")
+    println("kr.multicampus.kotlin.basic.display - double 매개변수 1개 함수")
     println("***************************")
 }

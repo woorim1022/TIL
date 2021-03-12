@@ -1,11 +1,11 @@
-
+package kr.multicampus.kotlin.basic
 fun main(){
     println("Hello")
     print("Hello")
     //println("Hello")
     /* 주석 */
-    println("test:"+100)
-    println("test:${100}")
+    println("kr.multicampus.kotlin.basic.test:"+100)
+    println("kr.multicampus.kotlin.basic.test:${100}")
 
 
     // 출력형태

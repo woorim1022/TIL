@@ -1,3 +1,5 @@
+package kr.multicampus.kotlin.basic
+
 fun main(){
     /*
     * 배열처럼 여러 개의 데이터를 저장하는 자료구조의 요소들을

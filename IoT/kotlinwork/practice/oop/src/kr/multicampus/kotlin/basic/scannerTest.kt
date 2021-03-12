@@ -1,3 +1,5 @@
+package kr.multicampus.kotlin.basic
+
 import java.util.Scanner
 
 fun main(){
