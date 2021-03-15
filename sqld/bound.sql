@@ -1,0 +1,71 @@
+
+
+
+
+
+
+
+
+
+
+
+문법 > SUM(컬럼명) OVER(
+        PARTITION BY [컬럼]
+        ORDER BY [컬럼] [ASC/DESC]
+        ROWS / RANGE
+        BETWEEN UNBOUNDED PRECEDING / PRECEDING / CURRENT ROW
+                AND UNBOUNDED FOLLOWING / CURRENT ROW
+      )
+-- ROW : 부분집합인 윈도우 크기를 물리적인 단위로 행 집합을 지정
+
+-- RANGE : 논리적인 주소에 의해 행 집합을 지정
+
+-- UNBOUNDED PRECEDING : 윈도우의 시작 위치가 첫번째 ROW
+
+-- UNBOUNDED FOLLOWING : 윈도우의 마지막 위치가 마지막 ROW
+
+-- CURRENT ROW : 윈도우의 시작 위치가 현재 ROW
+
+ 
+
+SELECT JOB, SAL
+        ,SUM(SAL) OVER(PARTITION BY JOB ORDER BY EMPNO
+        ROWS BETWEEN UNBOUNDED PRECEDING  AND UNBOUNDED FOLLOWING) SAL1
+
+        ,SAL
+        ,SUM(SAL) OVER(PARTITION BY JOB ORDER BY EMPNO
+        ROWS BETWEEN UNBOUNDED PRECEDING  AND CURRENT ROW) SAL2
+
+        ,SAL
+        ,SUM(SAL) OVER(PARTITION BY JOB ORDER BY EMPNO
+        ROWS BETWEEN CURRENT ROW  AND UNBOUNDED FOLLOWING) SAL3
+    FROM EMP
+WHERE JOB = 'MANAGER'
+-- SAL1 : 첫째ROW부터 마지막ROW까지 윈도우로 설정되었으므로 전체합계
+
+-- SAL2 : 첫째ROW부터 현재ROW까지 윈도우로 설정되었으므로 누적합계
+
+-- SAL3 : 현재ROW부터 마지막ROW까지 설정되었으으로 누적합계의 반대개념
+
+ 
+
+
+
+SELECT JOB, SAL
+        ,SUM(SAL) OVER(PARTITION BY JOB ORDER BY EMPNO
+        ROWS BETWEEN 1 PRECEDING  AND 1 FOLLOWING) SAL1
+
+        ,SAL
+        ,SUM(SAL) OVER(PARTITION BY JOB ORDER BY EMPNO
+        ROWS BETWEEN 1 PRECEDING  AND CURRENT ROW) SAL2
+
+        ,SAL
+        ,SUM(SAL) OVER(PARTITION BY JOB ORDER BY EMPNO
+        ROWS BETWEEN CURRENT ROW  AND 1 FOLLOWING) SAL3
+    FROM EMP
+WHERE JOB = 'MANAGER'
+--  SAL1 : 현재ROW중심으로 이전과 다음ROW의 합계
+
+--  SAL2 : 이전ROW와 현재ROW의 합계
+
+--  SAL3 : 현재ROW와 다음ROW의 합계
