@@ -36,3 +36,5 @@ SELECT e.ename, a.ename "Manager"
  -- CROSS JOIN절을 이용하여 Cartesian Product 값을 얻는 예제
 SELECT  e.empno, e.ename, d.dname
   FROM  dept d CROSS JOIN emp e;
+
+

@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.레이아웃">
+        <activity android:name=".FrameLayoutTest" />
         <activity android:name=".MainActivity" />
         <activity android:name=".FindVIewExam" />
         <activity android:name=".FindViewTestActivity" />
@@ -16,7 +17,12 @@
         <activity android:name=".FindVIewExam2" />
         <activity android:name=".FindViewTestActivity3" />
         <activity android:name=".ViewTestActivity" />
-        <activity android:name=".FrameLayoutTest">
+        <activity android:name=".TextTestActivity2" />
+        <activity android:name=".ImageTestActivity" />
+        <activity android:name=".ProgressBarTest" />
+        <activity android:name=".SeekBarTest" />
+        <activity android:name=".CheckBoxTest" />
+        <activity android:name=".CheckBoxTest2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
