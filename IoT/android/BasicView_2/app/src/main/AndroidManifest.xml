@@ -9,11 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BasicView">
+        <activity android:name=".CheckBoxTest"></activity>
+        <activity android:name=".ToggleSwitchTest" />
+        <activity android:name=".Calculator" />
+        <activity android:name=".seekBarTest" />
+        <activity android:name=".ProgressBarTest" />
+        <activity android:name=".ImageTestActivity" />
         <activity android:name=".TextTestActivity2" />
         <activity android:name=".TextTestActivity" />
-        <activity android:name=".ToggleSwitchTest" />
-        <activity android:name=".RadioButtonTestActivity" />
-        <activity android:name=".AdapterView">
+        <activity android:name=".RadioButtonTestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

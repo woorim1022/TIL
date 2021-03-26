@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.basicview">
+    package="multi.exam.view.intenttestapp">
 
     <application
         android:allowBackup="true"
@@ -8,12 +8,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BasicView">
-        <activity android:name=".TextTestActivity2" />
-        <activity android:name=".TextTestActivity" />
-        <activity android:name=".ToggleSwitchTest" />
-        <activity android:name=".RadioButtonTestActivity" />
-        <activity android:name=".AdapterView">
+        android:theme="@style/AppTheme">
+        <activity android:name=".OpenActivity">
+            <intent-filter>
+                <action android:name="com.exam.adapterView2"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
