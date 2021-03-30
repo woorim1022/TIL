@@ -1,8 +1,9 @@
-package com.example.fragment
+package com.example.fragment.fragment
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.FragmentTransaction
+import com.example.fragment.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -19,6 +20,9 @@ class MainActivity : AppCompatActivity() {
         btn_second.setOnClickListener{
             setFragment("second")
         }
+
+
+
         btn_del.setOnClickListener{
             setFragment("remove")
         }
