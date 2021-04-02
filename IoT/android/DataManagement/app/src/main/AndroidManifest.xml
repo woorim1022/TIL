@@ -11,7 +11,8 @@
         android:theme="@style/Theme.DataManagement">
         <activity android:name=".filesystem.NotePad" />
         <activity android:name=".filesystem.InternalFileMgr" />
-        <activity android:name=".preference.PreferenceScreenTest">
+        <activity android:name=".sqlite.ContentValuesTestActivity" />
+        <activity android:name=".sqlite.DBTestMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
