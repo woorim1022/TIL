@@ -18,8 +18,7 @@
         <activity android:name=".viewpager.ViewPagerActivity" />
         <activity android:name=".viewpager.ViewPager2TestActivity" />
         <activity android:name=".tab.TabTest1Activity" />
-        <activity android:name=".recycler.RecyclerSimpleItemTest" />
-        <activity android:name=".recycler.CircleImageRecyclerTest_Exam">
+        <activity android:name=".recycler.RecyclerSimpleItemTest">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

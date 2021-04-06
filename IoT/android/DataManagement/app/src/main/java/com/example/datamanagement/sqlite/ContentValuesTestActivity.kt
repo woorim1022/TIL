@@ -12,7 +12,9 @@ class ContentValuesTestActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dbjob_main)
+
         dao = MyTableDB(this)
+
         save.setOnClickListener {
             var myperson = Person(id.text.toString(), name.text.toString(),parseInt(age.text.toString()))
             dao?.insert(myperson)

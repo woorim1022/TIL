@@ -15,6 +15,7 @@ class DBTestMainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dbjob_main)
+
         //1. DBHelper 생성
         var helper = DBHelper(this)
 
