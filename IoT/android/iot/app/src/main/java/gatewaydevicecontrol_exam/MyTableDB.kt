@@ -40,8 +40,6 @@ class MyTableDB {
             val date = cursor.getString(1)
             val id = cursor.getString(2)
             val ledstate = cursor.getString(3)
-
-
             joblist.add(Job(date, id, ledstate))
         }
         return joblist
