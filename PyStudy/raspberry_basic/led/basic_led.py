@@ -1,22 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import RPi.GPIO as GPIO
 import time
 # GPIO의 핀모드를 설정
