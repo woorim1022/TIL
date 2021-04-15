@@ -34,17 +34,14 @@ def on_message(client,userdata,msg):
 
 # 객체생성
 mqttClient = mqtt.Client()
-
 # 브로커에 연결이 되면 내가 정의해 놓은 on_connect라는 함수가 실행되도록 등록
 mqttClient.on_connect = on_connect   # 연결되면 on_connect를 실행
-
 # 브로커에서 메세지가 전달되면 내가 등록해 놓은 on_message함수가 실행
 mqttClient.on_message = on_message   # 메세지가 오면 on_message 실행
-
 # 브로커에 연결하기
 mqttClient.connect("192.168.35.177",1883,60)
-
 # 토픽이 전달될 때 까지 수신대기기
 mqttClient.loop_forever( )
+
 
 GPIO.cleanup()

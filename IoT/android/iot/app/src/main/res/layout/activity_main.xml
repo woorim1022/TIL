@@ -41,7 +41,7 @@
             android:text="아이디 : " />
 
         <EditText
-            android:id="@+id/id"
+            android:id="@+id/showdata"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
