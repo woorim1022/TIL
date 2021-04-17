@@ -42,12 +42,10 @@ class MyMqtt(val context: Context, val uri:String) {
         })
     }
 
-
     //토픽 subscribe등록 - 토픽을 서버에 등록하기 위한 메소드 --- 1
-    // qos
-        // 0 : 보내고 끝, 1 : 보내고 한번정도 확인, 2 : handshaking
+    // qos - 0 : 보내고 끝, 1 : 보내고 한번정도 확인, 2 : handshaking
     private fun subscribeTopic(topic:String, qos: Int = 0){
-        mqttClient.subscribe(topic,qos,null,object : IMqttActionListener{
+        mqttClient.subscribe(topic, qos,null, object : IMqttActionListener{
             override fun onSuccess(asyncActionToken: IMqttToken?) {
                 Log.d("mymqtt","subscribe 성공")
             }
@@ -56,9 +54,6 @@ class MyMqtt(val context: Context, val uri:String) {
             }
         })
     }
-
-
-
 
     //broker에 publish 할 때 사용할 메소드
     fun publish(topic:String, payload: String, qos:Int=0){

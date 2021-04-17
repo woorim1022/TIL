@@ -38,7 +38,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        mqttClient = MyMqtt(this,"tcp://192.168.0.197:1883")
+
+        mqttClient = MyMqtt(this,"tcp://192.168.0.197:1883")  //IPv4주소
         try{
             mqttClient.setCallback(::onReceived)
             mqttClient.connect(arrayOf<String>("iot/#"))
@@ -52,6 +53,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         dao = MyTableDB(this)
 
         select()
+
         for(i in joblist){
             Log.d("@@@@", "\n날짜:${i.date}\n아이디:${i.id} \n" +
                     "led상태:${i.ledstate} \n=================\n")
@@ -88,7 +90,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
-
     fun publish(data:String){
         ///mqttClient의 publish기능의 메소드를 호출
         mqttClient.publish("mydata/led",data)
