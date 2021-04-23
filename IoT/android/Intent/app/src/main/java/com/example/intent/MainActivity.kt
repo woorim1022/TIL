@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
             //2. 데이터 공유하기
 //            firstIntent.putExtra("info","첫 번째 액티비티가 넘기는 메시지")
 //            firstIntent.putExtra("num", 10000)
-
             
             //액티비티를 실행하기 위해서 android OS에 의뢰
             startActivity(firstIntent)

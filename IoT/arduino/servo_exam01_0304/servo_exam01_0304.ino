@@ -1,42 +1,125 @@
-//과제
-//스위치 2개를 이용해서 서보모터 각도를 제어
-//스위치 1개는 각도가 20도씩 + 되도록 구현
-//스위치 1개는 각도가 20도씩 - 되도록 구현
-//풀업으로 구현
-//최대각도 : 180, 최소각도 : 0
-#include <Servo.h>
 
-Servo myServo;
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
+#include "HX711.h"
 
-int btn1 = 13; //+용 버튼
-int btn2 = 12; //-용 버튼
-int btn1_state = 1; //버튼이 눌려졌는지 판단하기 위한 상태값
-int btn2_state = 1; //버튼이 눌려졌는지 판단하기 위한 상태값
-int angle = 0; //서보모터에 셋팅할 각도
+#define LOADCELL_DOUT_PIN     D1
+#define LOADCELL_SCK_PIN      D2
+
+//각자 수정해야 할 부분
+const char* ssid = "공유기 이름";
+const char* password = "공유기 비밀번호";
+String host = "http://polarbear1022.dothome.co.kr";
+
+const long interval = 5000;
+unsigned long previousMillis = 0;
+float loadcellValue = 372.0;
+int flag = 0;
+
+WiFiServer server(80);
+WiFiClient client;
+HX711 scale;
 
 void setup() {
   // put your setup code here, to run once:
+
+
   Serial.begin(9600);
-  myServo.attach(6);
-  pinMode(btn1,INPUT);
-  pinMode(btn2,INPUT);
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("");
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+  Serial.print("IP address: ");
+  Serial.println(WiFi.localIP());
+  server.begin();
+  Serial.println("Server started");
+
+  // 로드셀 HX711 보드 pin 설정
+  scale.begin(LOADCELL_DOUT_PIN, LOADCELL_SCK_PIN);
+
+  // 부팅 후 잠시 대기 (2초)
+  delay(2000);
+
+  // 측정값 1회 읽어오기
+  Serial.print("read: \t\t\t");
+  Serial.println(scale.read());
+
+  delay(1000);
+
+  // 스케일 설정
+  scale.set_scale(loadcellValue);
+
+  // 오프셋 설정(10회 측정 후 평균값 적용) - 저울 위에 아무것도 없는 상태를 0g으로 정하는 기준점 설정(저울 위에 아무것도 올려두지 않은 상태여야 합니다.)
+  scale.tare(10);
+
+  // 설정된 오프셋 및 스케일 값 확인
+  Serial.print("Offset value :\t\t");
+  Serial.println(scale.get_offset());
+  Serial.print("Scale value :\t\t");
+  Serial.println(scale.get_scale());
+
+  // (read - offset) 값 확인 (scale 미적용)
+  Serial.print("(read - offset) value: \t");
+  Serial.println(scale.get_value());
+  delay(2000);
+
+
 }
 
 void loop() {
-  myServo.write(angle);
-  btn1_state = digitalRead(btn1);
-  btn2_state = digitalRead(btn2);
-  if(btn1_state==0){ 
-    if (angle < 180)
-      angle+=20;
-    Serial.println("+버튼:" + (String)angle);
-    myServo.write(angle);
+  // put your main code here, to run repeatedly:
+  HTTPClient http;
+  float weight;
+  String WeightData;
+
+  //값을 3번은 측정해야 더 정확한 값이 나올 것 같아서 flag 설정함
+  while (flag < 3) {
+    weight = scale.get_units(5);
+    while (weight <= 10) {
+      weight = scale.get_units(5);
+    }
+    flag = flag + 1;
   }
-  else if(btn2_state==0){
-    if (angle > 0)
-      angle-=20;
-    Serial.println("-버튼:" + (String)angle);
-    myServo.write(angle); 
+
+  //flag가 3일 때만 데이터 전송
+  if (flag == 3) {
+    char stringdata[10];
+
+    //float to String 소수점 버림 처리함
+    dtostrf(weight, 5, 0, stringdata);
+    Serial.printf("%s\n", stringdata);
+
+    //부모 테이블의 기본키 정보를 받아오는 걸 아직 구현을 못해서 테스트 시에는 WidData 값을 알맞게 수정해서 넣어주어야 함
+    String WidData = "test";
+    WeightData = stringdata;
+
+    //wdate는 php 내에서 따로 db로 전달
+    String Send = "wid=" + WidData + "&weight=" + WeightData;
+
+    //POST 전송
+    http.begin("http://polarbear1022.dothome.co.kr/loadcell.php");
+    http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+    int httpCode = http.POST(Send);
+    String payload = http.getString();
+
+    http.setTimeout(1000);
+
+    if (httpCode > 0) {
+      Serial.printf("POST code : %d\n\n", httpCode);
+
+      if (httpCode == HTTP_CODE_OK) {
+        Serial.println(payload);
+      }
+    }
+    else {
+      Serial.printf("POST failed, error: %s\n", http.errorToString(httpCode).c_str());
+    }
+    http.end();
+    flag = flag + 1;
   }
-  delay(300);
 }

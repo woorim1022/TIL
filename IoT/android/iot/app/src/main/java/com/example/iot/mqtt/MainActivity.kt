@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     var dao: MyTableDB? = null
     var joblist = ArrayList<Job>()
     val currentDateTime = Calendar.getInstance().time
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -63,7 +62,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         myrecycler1.layoutManager = manager//setter메소드 호출
         myrecycler1.adapter = myadapter
     }
-
     override fun onClick(v: View?) {
         var data:String = ""
         if(v?.id==R.id.btn_led_on){
@@ -94,7 +92,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         ///mqttClient의 publish기능의 메소드를 호출
         mqttClient.publish("mydata/led",data)
     }
-
     fun onReceived(topic:String,message:MqttMessage){
         //토픽에 대한 수신처리
         val msg = String(message.payload)
@@ -122,7 +119,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
         Log.d("mymqtt",msg)
     }
-
     //notification 실행
     fun createNotiChannel(builder: NotificationCompat.Builder, id:String){
         //낮은 버전의 사용자에 대한 설정
