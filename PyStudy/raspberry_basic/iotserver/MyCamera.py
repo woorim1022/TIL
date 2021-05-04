@@ -9,7 +9,6 @@ class MyCamera:
     thread = None
     frame = None
     start_time = 0
-
     # streaming이라는 함수를 쓰레드로 관리하고 화면을 보내주는 함수
     def getStreaming(self):
         MyCamera.start_time = time.time()

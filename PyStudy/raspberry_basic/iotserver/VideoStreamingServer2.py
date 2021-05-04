@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, request, Response
 import MyCamera
 import RPi.GPIO as GPIO
@@ -30,7 +29,6 @@ def showVideo():
 @app.route("/<command>")
 def action(command):
     if command == "on":
-       
         message = "GPIO" + " ON"
     elif command == "off":
             message = "GPIO" + " ON"

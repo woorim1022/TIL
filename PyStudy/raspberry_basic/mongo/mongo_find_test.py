@@ -27,7 +27,7 @@ for my_doc in list_data:
 print("=======================================================================");
 # 조건에 따라 조회하기
 # my_query = {"java":{"$gt":90}};
-my_query = {"addr":"인천"};
+my_query = {"subject":['java', 'python']};
 list_data = my_collection.find(my_query);
 for my_doc in list_data:
     print(my_doc);
