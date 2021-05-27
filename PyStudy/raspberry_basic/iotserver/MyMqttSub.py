@@ -1,6 +1,7 @@
 import paho.mqtt.client as mqtt
 import RPi.GPIO as GPIO
 import PirSensor
+
 sensors = [
     # Sensor(5, (3, 10), 'iot/user1/temp'),
     # Sensor(7, (20, 60), 'iot/user1/humi'),
@@ -10,25 +11,24 @@ sensors = [
 led = 21
 
 
-class MyMqtt_Sub():
+class MyMqtt_Sub:
     def __init__(self):
         client = mqtt.Client()
         client.on_connect = self.on_connect
         client.on_message = self.on_message
-        client.connect("192.168.0.221", 1883, 60)   # 브로커주소
-        # pir = PirSensor.Pir(client,"")
-        # pir.start()
+        client.connect("192.168.0.221", 1883, 60)  # 브로커주소
+        pir = PirSensor.Pir(client,"")
+        pir.start()
         client.loop_forever()
-        
 
-    def on_connect(self,client, userdata, flags, rc):
+    def on_connect(self, client, userdata, flags, rc):
         print("connect.." + str(rc))
         if rc == 0:
             client.subscribe("mydata/led")
         else:
             print("연결실패")
 
-    def on_message(self,client, userdata, msg):
+    def on_message(self, client, userdata, msg):
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(led, GPIO.OUT, initial=GPIO.LOW)
         myval = msg.payload.decode("utf-8")
@@ -39,7 +39,7 @@ class MyMqtt_Sub():
             GPIO.output(led, GPIO.HIGH)
         else:
             GPIO.output(led, GPIO.LOW)
-            #GPIO.cleanup()
+            # GPIO.cleanup()
 
 
 if __name__ == "__main__":
@@ -49,6 +49,3 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print("종료")
         GPIO.cleanup()
-
-
-

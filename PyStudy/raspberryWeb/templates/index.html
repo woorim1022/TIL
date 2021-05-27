@@ -5,7 +5,53 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>게시판</h1>
-    <a href='{% url "list" %}'>게시판 목록</a>
+    <h1>python board testgk</h1>
+    <a href="{% url 'list' %}">board list</a><br/>
+    <a>웹소켓 실행</a>
+    <form>
+        <input id="textMessage" type="text">
+        <input onclick="sendMessage()" value="Send" type="button">
+        <input onclick="disconnect()" value="Disconnect" type="button">
+    </form>
+    <br />
+
+    <textarea id="mydatalist" rows="10" cols="50"></textarea>
+    <script type="text/javascript">
+        // 웹 서버를 <접속한다 class=""></접속한다>
+        var webSocket = new WebSocket("ws://localhost:9998");
+        // 웹 서버와의 통신을 주고 받은 결과를 출력할 오브젝트를 가져옵니다.
+        var mydatalist = document.getElementById("mydatalist");
+        // 웹소켓 접속이 되면 호출되는 함수
+        webSocket.onopen = function(message){
+            mydatalist.value += "Server connect...\n";
+        };
+        // 웹소켓 접속이 종료되면 호출되는 함수
+        webSocket.onclose = function(message){
+            mydatalist.value += "Server Disconnect...\n";
+        };
+        // 웹소켓 통신 중에 에러가 발생되면 호출되는 함수
+        webSocket.onerror = function(message){
+            mydatalist.value += "error...\n";
+        };
+        // 웹소켓 서버로 부터 메시지가 오면 호출되는 함수.
+        webSocket.onmessage = function(message){
+            // 출력 area에 메시지를 표시한다.
+            mydatalist.value += "Recieve From Server => "+message.data+"\n";
+        };
+        // 서버로 메시지를 전송하는 함수
+        function sendMessage(){
+            var message = document.getElementById("textMessage");
+            mydatalist.value += "Send to Server => "+message.value+"\n";
+            //웹소켓으로 textMessage객체의 값을 보낸다.
+            webSocket.send(mydatalist.value);
+            //textMessage객체의 값 초기화
+            message.value = "";
+        }
+        function disconnect(){
+            webSocket.close();
+        }
+    </script>
+    <img src=""/>
+    <img src="http://192.168.0.61:5000/show"/>
 </body>
 </html>
