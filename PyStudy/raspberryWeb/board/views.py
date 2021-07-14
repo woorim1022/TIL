@@ -41,3 +41,8 @@ def login(request):
 #         "rsBoard":rsBoard
 #     }
 #     return render(request,"board_list.html",context)
+
+
+
+def cctv(request):
+    return render(request, 'mqtt.html')
