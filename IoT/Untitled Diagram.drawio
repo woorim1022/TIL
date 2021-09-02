@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-09-02T17:32:36.000Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36" etag="UfEApS6SUDf4vMfNc14b" version="14.7.4" type="github">
+<mxfile host="app.diagrams.net" modified="2021-09-02T17:33:04.345Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36" etag="14L6uKMjBtiyTFmDzPxX" version="14.7.4" type="github">
   <diagram name="Page-1" id="e7e014a7-5840-1c2e-5031-d8a46d1fe8dd">
-    <mxGraphModel dx="1297" dy="730" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="0">
+    <mxGraphModel dx="1074" dy="605" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -106,13 +106,13 @@
         <mxCell id="L_vHGLZkjsYfhN7t1LTF-100" value="비디오 스트리밍&lt;br style=&quot;padding: 0px ; margin: 0px&quot;&gt;스레드 시작" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="3">
           <mxGeometry x="340" y="172" width="100" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="L_vHGLZkjsYfhN7t1LTF-168" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startSize=23;strokeColor=#000000;" edge="1" parent="3">
+        <mxCell id="L_vHGLZkjsYfhN7t1LTF-168" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startSize=23;strokeColor=#000000;" edge="1" parent="3" source="L_vHGLZkjsYfhN7t1LTF-99">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="70" y="216" as="sourcePoint" />
             <mxPoint x="70" y="276" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="70" y="236" />
-              <mxPoint x="70" y="236" />
+              <mxPoint x="70" y="222" />
+              <mxPoint x="70" y="222" />
             </Array>
           </mxGeometry>
         </mxCell>
