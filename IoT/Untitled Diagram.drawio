@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-09-02T15:03:42.974Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36" etag="RtorWYa-DyXyQ5wxu56B" version="14.7.4" type="github">
+<mxfile host="app.diagrams.net" modified="2021-09-02T15:25:52.322Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36" etag="oU2-3EKXGn_xFYziqEzT" version="14.7.4" type="github">
   <diagram name="Page-1" id="e7e014a7-5840-1c2e-5031-d8a46d1fe8dd">
     <mxGraphModel dx="1667" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="0">
       <root>
@@ -46,40 +46,61 @@
           <mxGeometry x="232.5" y="22" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="L_vHGLZkjsYfhN7t1LTF-84" value="MQTT&#xa;Client" style="" vertex="1" parent="3">
-          <mxGeometry x="440" y="250" width="70" height="35" as="geometry" />
+          <mxGeometry x="450" y="250" width="60" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="L_vHGLZkjsYfhN7t1LTF-85" value="MQTT&#xa;Publisher" style="" vertex="1" parent="3">
-          <mxGeometry x="440" y="412" width="70" height="35" as="geometry" />
+        <mxCell id="L_vHGLZkjsYfhN7t1LTF-85" value="MQTT&#xa;Publisher" style="shadow=0;" vertex="1" parent="3">
+          <mxGeometry x="450" y="430" width="60" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="L_vHGLZkjsYfhN7t1LTF-100" value="비디오 스트리밍&lt;br style=&quot;padding: 0px ; margin: 0px&quot;&gt;스레드" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="3">
+        <mxCell id="L_vHGLZkjsYfhN7t1LTF-100" value="비디오 스트리밍&lt;br style=&quot;padding: 0px ; margin: 0px&quot;&gt;스레드 시작" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="3">
           <mxGeometry x="340" y="172" width="100" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="L_vHGLZkjsYfhN7t1LTF-99" value="방문자 행동 감지&lt;br style=&quot;padding: 0px ; margin: 0px&quot;&gt;스레드" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="3">
+        <mxCell id="L_vHGLZkjsYfhN7t1LTF-99" value="방문자 행동 감지&lt;br style=&quot;padding: 0px ; margin: 0px&quot;&gt;스레드 시작" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="3">
           <mxGeometry x="10" y="172" width="100" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="L_vHGLZkjsYfhN7t1LTF-97" value="jpg 파일 생성&lt;br style=&quot;padding: 0px ; margin: 0px&quot;&gt;스래드" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="3">
+        <mxCell id="L_vHGLZkjsYfhN7t1LTF-97" value="jpg 파일 생성&lt;br style=&quot;padding: 0px ; margin: 0px&quot;&gt;스래드 시작" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="3">
           <mxGeometry x="232.5" y="172" width="100" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="L_vHGLZkjsYfhN7t1LTF-96" value="조명 제어 스레드" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="3">
-          <mxGeometry x="117.5" y="172" width="100" height="40" as="geometry" />
+        <mxCell id="L_vHGLZkjsYfhN7t1LTF-96" value="조명 제어 스레드&lt;br&gt;시작" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="3">
+          <mxGeometry x="122.5" y="172" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="21" value="PIR == on" style="rhombus;fillColor=#ffffc0;strokeColor=#ff0000;" parent="3" vertex="1">
-          <mxGeometry x="225.0000000000001" y="305" width="80" height="40" as="geometry" />
+          <mxGeometry x="227.5000000000001" y="292" width="80" height="40" as="geometry" />
         </mxCell>
         <mxCell id="L_vHGLZkjsYfhN7t1LTF-118" value="jpg 파일 생성" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="3">
-          <mxGeometry x="215" y="562" width="100" height="40" as="geometry" />
+          <mxGeometry x="230" y="472" width="82.5" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="L_vHGLZkjsYfhN7t1LTF-119" value="msg == &#39;strat&#39;" style="rhombus;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="3">
-          <mxGeometry x="350.0000000000001" y="305" width="80" height="40" as="geometry" />
+        <mxCell id="L_vHGLZkjsYfhN7t1LTF-119" value="message == &#39;start&#39;" style="rhombus;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="3">
+          <mxGeometry x="350.0000000000001" y="332" width="80" height="40" as="geometry" />
         </mxCell>
         <mxCell id="L_vHGLZkjsYfhN7t1LTF-120" value="프레임 생성" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="3">
-          <mxGeometry x="105" y="409.5" width="100" height="40" as="geometry" />
+          <mxGeometry x="120" y="462" width="85" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="L_vHGLZkjsYfhN7t1LTF-122" value="PIR == on&#xa;and&#xa;19 &lt; curHour &lt; 7" style="rhombus;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="3">
-          <mxGeometry x="122.5" y="260" width="90" height="45" as="geometry" />
+        <mxCell id="L_vHGLZkjsYfhN7t1LTF-122" value="PIR == on&#xa;and&#xa;19시 &lt;= 현재시간 &lt;= 7시" style="rhombus;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="3">
+          <mxGeometry x="122.5" y="250" width="90" height="45" as="geometry" />
         </mxCell>
-        <mxCell id="L_vHGLZkjsYfhN7t1LTF-123" value="기울기 변화&#xa;or&#xa;압력 감지" style="rhombus;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="3">
-          <mxGeometry x="10" y="352" width="90" height="45" as="geometry" />
+        <mxCell id="L_vHGLZkjsYfhN7t1LTF-123" value="기울기 변화 감지&#xa;or&#xa;압력 감지" style="rhombus;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="3">
+          <mxGeometry x="10" y="313.5" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="L_vHGLZkjsYfhN7t1LTF-127" value="&amp;nbsp;Storage" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;startSize=23;" vertex="1" parent="3">
+          <mxGeometry x="20" y="562" width="130" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="L_vHGLZkjsYfhN7t1LTF-128" value="현재날짜 - jpg 생성 날짜&#xa;&gt;= 7" style="rhombus;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="3">
+          <mxGeometry x="205" y="562" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="L_vHGLZkjsYfhN7t1LTF-130" value="사진 삭제" style="rounded=1;whiteSpace=wrap;html=1;startSize=23;" vertex="1" parent="3">
+          <mxGeometry x="230" y="622" width="75" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="L_vHGLZkjsYfhN7t1LTF-131" value="사진 저장" style="rounded=1;whiteSpace=wrap;html=1;startSize=23;" vertex="1" parent="3">
+          <mxGeometry x="120" y="510" width="85" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="L_vHGLZkjsYfhN7t1LTF-132" value="감지 시각 전송" style="rounded=1;whiteSpace=wrap;html=1;startSize=23;" vertex="1" parent="3">
+          <mxGeometry x="20" y="380" width="85" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="L_vHGLZkjsYfhN7t1LTF-133" value="조명 On" style="rounded=1;whiteSpace=wrap;html=1;startSize=23;" vertex="1" parent="3">
+          <mxGeometry x="250" y="342" width="72.5" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="L_vHGLZkjsYfhN7t1LTF-134" value="프레임 전송" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="3">
+          <mxGeometry x="360" y="470" width="80" height="40" as="geometry" />
         </mxCell>
         <mxCell id="4" value="클라우드" style="swimlane;whiteSpace=wrap" parent="1" vertex="1">
           <mxGeometry x="940" y="128" width="130" height="672" as="geometry" />
