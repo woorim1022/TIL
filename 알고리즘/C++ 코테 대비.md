@@ -102,3 +102,9 @@ char_vector.clear(); // 모든 데이터 삭제
 
 ​    data() - 포인터가 접근할 수 있도록 벡터의 주소값을 반환합니다( int *p = vector1.data() )
 
+* 벡터 정렬
+
+```c++
+sort(v.begin(), v.end());
+```
+
